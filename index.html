@@ -17,8 +17,8 @@
                 <div class="image-container">
                     <img :src="slides[activeSlide].image" :alt="slides[activeSlide].title">
                     <div class="text">
-                        <h3> {{slides.title}} </h3>
-                        <p> {{slides.text}}  </p>
+                        <h3> {{slides[activeSlide].title}} </h3>
+                        <p> {{slides[activeSlide].text}}  </p>
                     </div>
                 </div>
             </div>
@@ -26,7 +26,10 @@
             <!-- Thumbnails -->
             <div class="thumbs">
                 <!-- genera con vue  -->
-                <div v-for="(slides,index) in slides" class="thumb active">
+                <div v-for="(slides,index) in slides" 
+                class="thumb"
+                :class="{active: index === activeSlide}"
+                @click="setSlide(index)">
                     <img :src="slides.image" :alt="slides.title">
                 </div>
     

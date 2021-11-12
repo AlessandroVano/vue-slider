@@ -14,8 +14,8 @@
             <!-- Images -->
             <div class="images">
                 <!-- genera con vue -->
-                <div v-for="(slides, index) in slides" class="image-container">
-                    <img :src="slides.image" :alt="slides.title">
+                <div class="image-container">
+                    <img :src="slides[activeSlide].image" :alt="slides[activeSlide].title">
                     <div class="text">
                         <h3> {{slides.title}} </h3>
                         <p> {{slides.text}}  </p>
@@ -26,8 +26,8 @@
             <!-- Thumbnails -->
             <div class="thumbs">
                 <!-- genera con vue  -->
-                <div class="thumb active">
-                    <img src="./img/01.jpg" alt="Lorem">
+                <div v-for="(slides,index) in slides" class="thumb active">
+                    <img :src="slides.image" :alt="slides.title">
                 </div>
     
                 <div class="prev">&uarr;</div>

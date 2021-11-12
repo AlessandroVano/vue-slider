@@ -32,9 +32,9 @@
                 @click="setSlide(index)">
                     <img :src="slides.image" :alt="slides.title">
                 </div>
-    
-                <div class="prev">&uarr;</div>
-                <div class="next">&darr;</div>
+     
+                <div @click="prevSlide" class="prev">&uarr;</div>
+                <div  @click="nextSlide" class="next">&darr;</div> 
             </div>
         </section>
      </div>

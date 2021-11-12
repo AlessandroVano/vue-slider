@@ -46,8 +46,26 @@ const app = new Vue({
                  this.activeSlide = this.slides.length -1;
              }
          },
-         setSlide(index) {
-             this.activeSlide = index;
+        
+
+     prevSlide() {
+         this.activeSlide--;
+         if(this.activeSlide < 0){
+             this.activeSlide = this.slides.length -1;
          }
-     }
+     },
+
+     nextSlide() {
+        this.activeSlide++;
+        if(this.activeSlide > this.slides.length -1 ){
+            this.activeSlide = 0;
+        }
+    },
+
+     setSlide(index) {
+        this.activeSlide = index;
+    }
+},
+
+
 });
